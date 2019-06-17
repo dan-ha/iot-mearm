@@ -1,0 +1,32 @@
+<!-- socketio -->
+<script src="http://localhost:5000/socket.io/socket.io.js"></script>
+<!-- vue -->
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+
+<div id="app">
+    <button accesskey="q" @click="liftAdjust(-1)">Q</button>
+    <button accesskey="w" @click="lift(1)">W</button>
+    <button accesskey="e" @click="liftAdjust(1)" value="-1">E</button>
+    <br>
+    <button accesskey="a" @click="turn(-1)" value="-1">A</button>
+    <button accesskey="s" @click="lift(-1)" value="-1">S</button>
+    <button accesskey="d" @click="turn(1)" value="1">D</button>
+
+    <br>
+    <br>
+
+    <button accesskey="i" @click="grip(1)">i</button>
+    <br>
+    <button accesskey="j" @click="rotate(-1)" value="-1">j</button>
+    <button accesskey="k" @click="grip(-1)" value="-1">k</button>
+    <button accesskey="l" @click="rotate(1)" value="1">l</button>
+
+    <br>
+    <br>
+
+    <label for="speed">Speed</label>
+    <input type="text" v-model="speed" id="speed">
+
+</div>
+
+<script src="./app.js"></script>
