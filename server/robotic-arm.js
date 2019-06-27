@@ -5,7 +5,7 @@ class MeArm {
     constructor(basePin = 3, rightPin = 4, leftPin = 5, rotatePin = 6, clawPin = 7) {
         this.board = new five.Board();
         this.board.on("ready", () => {
-            // base is missing for now
+            this.servoBase = new five.Servo({ pin: basePin, startAt: 90 })
             this.servoBodyRight = new five.Servo({ pin: rightPin, startAt: 90 });
             this.servoBodyLeft = new five.Servo({ pin: leftPin, startAt: 90 });
             this.servoClawRotate = new five.Servo({ pin: rotatePin, startAt: 90 });
@@ -13,16 +13,15 @@ class MeArm {
         });
     }
 
-    // when base will be mounted
-    // turn(degrees) {
-    //     this.servoBase.step(degrees);
-    // }
+    turn(degrees) {
+        this.servoBase.step(degrees);
+    }
 
-    lift(degrees) {
+    forward(degrees) {
         this.servoBodyRight.step(degrees);
     }
 
-    liftAdjust(degrees) {
+    lift(degrees) {
         this.servoBodyLeft.step(degrees);
     }
 

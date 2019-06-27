@@ -7,14 +7,20 @@ class RemoteController {
     }
 
     setSocketListeners() {
+
+        this.socket.on('turn', (degrees) => {
+            console.log(`Turn: ${degrees}deg`);
+            this.roboticArm.turn(degrees);
+        });
+
+        this.socket.on('forward', (degrees) => {
+            console.log(`Forward: ${degrees}deg`);
+            this.roboticArm.forward(degrees);
+        });
+
         this.socket.on('lift', (degrees) => {
             console.log(`Lift: ${degrees}deg`);
             this.roboticArm.lift(degrees);
-        });
-
-        this.socket.on('liftAdjust', (degrees) => {
-            console.log(`LiftAdjust: ${degrees}deg`);
-            this.roboticArm.liftAdjust(degrees);
         });
 
         this.socket.on('rotate', (degrees) => {

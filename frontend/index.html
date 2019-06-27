@@ -4,12 +4,12 @@
 <script src="https://npmcdn.com/vue/dist/vue.js"></script>
 
 <div id="app">
-    <button accesskey="q" @click="liftAdjust(-1)">Q</button>
-    <button accesskey="w" @click="lift(1)">W</button>
-    <button accesskey="e" @click="liftAdjust(1)" value="-1">E</button>
+    <button accesskey="q" @click="lift(-1)">Q</button>
+    <button accesskey="w" @click="forward(1)">W</button>
+    <button accesskey="e" @click="lift(1)" value="-1">E</button>
     <br>
     <button accesskey="a" @click="turn(-1)" value="-1">A</button>
-    <button accesskey="s" @click="lift(-1)" value="-1">S</button>
+    <button accesskey="s" @click="forward(-1)" value="-1">S</button>
     <button accesskey="d" @click="turn(1)" value="1">D</button>
 
     <br>
